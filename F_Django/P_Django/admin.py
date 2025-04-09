@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Quartier, Maison
 
-# Register your models here.
+admin.site.register(Quartier)
+admin.site.register(Maison)

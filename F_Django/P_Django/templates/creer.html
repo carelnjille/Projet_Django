@@ -1,0 +1,13 @@
+
+{% load static %}
+<head>
+  <link rel="stylesheet" "{% static 'creer.css' %}">
+</head>
+<body>
+<h2>Créer un Quartier / une Maison</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Créer</button>
+</form>
+</body>

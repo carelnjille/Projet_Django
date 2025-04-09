@@ -1,0 +1,21 @@
+ 
+
+{% load static %}
+
+<head>
+  <!-- Lien vers le fichier CSS -->
+  <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+
+<body>
+  <h1>Quartiers</h1>
+  <a href="{% url 'creer_quartier' %}">Créer un Quartier</a> | 
+  <a href="{% url 'creer_maison' %}">Créer une Maison</a>
+  <ul>
+    {% for q in quartiers %}
+      <li><a href="{% url 'quartier_detail' q.id %}">{{ q.nom }}</a></li>
+    {% empty %}
+      <li>Aucun quartier</li>
+    {% endfor %}
+  </ul>
+</body>

@@ -1,0 +1,11 @@
+{% load static %}
+<head>
+<link rel="stylesheet" "{% static "maison_detail.css" %} }">
+</head>
+<body>
+<h2>{{ maison.nom }}</h2>
+<p>Quartier : {{ maison.quartier.nom }}</p>
+<p>Superficie : {{ maison.superficie }} m²</p>
+<p>Chambres : {{ maison.nb_chambres }}</p>
+<p>Douches : {{ maison.nb_douches }}</p>
+</body>

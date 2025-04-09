@@ -1,0 +1,19 @@
+<head>
+<link rel="stylesheet" {% static "quartier_detail.css" %} >
+</head>
+
+<body>
+<h2>{{ quartier.nom }}</h2>
+<p>Superficie totale : {{ quartier.superficie }} m²</p>
+<p>Superficie restante : {{ quartier.superficie_restante }} m²</p>
+
+<h3>Maisons</h3>
+<ul>
+  {% for maison in quartier.maisons.all %}
+    <li><a href="{% url 'maison_detail' maison.id %}">{{ maison.nom }}</a></li>
+  {% empty %}
+    <li>Aucune maison</li>
+  {% endfor %}
+</ul>
+
+</body>
